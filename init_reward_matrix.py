@@ -32,8 +32,4 @@ def init_reward_matrix():
 
         reward[state][state] = -1000  # prevent loop
 
-    # set the reward of completing the puzzle to 1000
-    # for i in range(24, 26):
-    #     reward[i][26] = 1000
-
     return reward
