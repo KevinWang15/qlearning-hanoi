@@ -23,9 +23,13 @@ def print_state(state):
     print_pos(2)
     sys.stdout.write("\n")
 
-def print_solution(reward_matrix):
-    current_state = 0
 
+def get_state(s, m, l):
+    return (s % 3) + (m % 3) * 3 + (l % 3) * 9
+
+
+def print_solution(reward_matrix, current_state=0):
+    print "START"
     while current_state != final_state:
         print_state(current_state)
         possible_actions = reward_matrix[current_state]
@@ -38,6 +42,7 @@ def print_solution(reward_matrix):
         current_state = best_next_state
 
     print_state(current_state)
+    print "END\n"
 
 
 def print_reward_matrix(reward):

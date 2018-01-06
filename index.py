@@ -11,4 +11,4 @@ from utils import print_solution
 for i in range(0, 10000):
     train()
 
-print_solution(reward_matrix)
+print_solution(reward_matrix,)

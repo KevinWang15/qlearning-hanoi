@@ -1,5 +1,4 @@
-def get_state(s, m, l):
-    return (s % 3) + (m % 3) * 3 + (l % 3) * 9
+from utils import get_state
 
 
 def init_reward_matrix():
