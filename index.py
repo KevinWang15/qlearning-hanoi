@@ -12,4 +12,7 @@ from utils import print_solution, get_state
 for i in range(0, 100000):
     train(randint(0, 26))
 
-print_solution(reward_matrix, get_state(0, 1, 1))
+for i in range(0, 3):
+    for j in range(0, 3):
+        for k in range(0, 3):
+            print_solution(reward_matrix, get_state(i, j, k))
