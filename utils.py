@@ -1,3 +1,5 @@
+import sys
+
 final_state = 26
 
 
@@ -5,8 +7,21 @@ def print_state(state):
     pos_s = state % 3
     pos_m = (state / 3) % 3
     pos_l = (state / 9) % 3
-    print "s:" + str(pos_s) + " m:" + str(pos_m) + " l:" + str(pos_l)
 
+    def print_pos(pos):
+        sys.stdout.write("[")
+        if pos_s == pos:
+            sys.stdout.write("S")
+        if pos_m == pos:
+            sys.stdout.write("M")
+        if pos_l == pos:
+            sys.stdout.write("L")
+        sys.stdout.write("]")
+
+    print_pos(0)
+    print_pos(1)
+    print_pos(2)
+    sys.stdout.write("\n")
 
 def print_solution(reward_matrix):
     current_state = 0
