@@ -3,8 +3,8 @@ from reward_punishment import calc_reward_from_action
 from utils import final_state
 
 
-def train():
-    current_state = 0
+def train(initial_state=0):
+    current_state = initial_state
 
     while current_state != final_state:
         possible_actions = reward_matrix[current_state]

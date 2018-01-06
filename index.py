@@ -6,9 +6,10 @@
 
 from common import reward_matrix
 from train import train
-from utils import print_solution
+from random import randint
+from utils import print_solution, get_state
 
-for i in range(0, 10000):
-    train()
+for i in range(0, 100000):
+    train(randint(0, 26))
 
-print_solution(reward_matrix,)
+print_solution(reward_matrix, get_state(0, 1, 1))
