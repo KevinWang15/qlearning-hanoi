@@ -5,11 +5,11 @@ def get_state(s, m, l):
 def init_reward_matrix():
     reward = []
 
-    # set the reward of unconnected area to -1
+    # set the reward of unconnected area to -1000
     for i in range(0, 27):
         row = []
         for j in range(0, 27):
-            row.append(-1)
+            row.append(-1000)
         reward.append(row)
 
     # set the reward of connected states to 0
@@ -31,10 +31,10 @@ def init_reward_matrix():
                 if pos_m != i and pos_s != i:
                     reward[state][get_state(pos_s, pos_m, i)] = 0
 
-        reward[state][state] = -1  # prevent loop
+        reward[state][state] = -1000  # prevent loop
 
-    # set the reward of completing the puzzle to 100
-    for i in range(24, 26):
-        reward[i][26] = 100
+    # set the reward of completing the puzzle to 1000
+    # for i in range(24, 26):
+    #     reward[i][26] = 1000
 
     return reward
